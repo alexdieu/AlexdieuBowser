@@ -105,7 +105,7 @@ class MainWindow(QMainWindow):
         tb.setIconSize(QSize(25,25))
         self.addToolBar(tb)
 
-        win_btn = QAction(QIcon("nouvfenetre"), "New Window", self)
+        win_btn = QAction(QIcon("nouvfenetre"), "Nouvelle fenetre", self)
         win_btn.setStatusTip("Créer une nouvelle fenetre")
         win_btn.triggered.connect(self.new_win)
         tb.addAction(win_btn)
