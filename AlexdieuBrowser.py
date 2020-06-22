@@ -12,8 +12,7 @@ class MainWindow(QMainWindow):
         self.pbar = QProgressBar()
         self.pbar.setMaximumWidth(120)
 
-        self.browser=QWebEngineView(loadProgress=self.pbar.setValue, loadFinished=self.pbar.hide,
-                                  loadStarted=self.pbar.show, titleChanged=self.setWindowTitle)
+        self.browser=QWebEngineView(loadProgress=self.pbar.setValue, loadFinished=self.pbar.hide,loadStarted=self.pbar.show, titleChanged=self.setWindowTitle)
         self.browser.setUrl(QUrl("https://duckduckgo.com/"))
         self.setCentralWidget(self.browser)
 
@@ -76,10 +75,10 @@ class MainWindow(QMainWindow):
         stack_btn.triggered.connect(lambda: self.conn("https://stackoverflow.com"))
         tb2.addAction(stack_btn)
         
-        youtube_btn = Qaction(QIcon("youtube"), "Invidious", self)
+        youtube_btn = QAction(QIcon("youtube"), "Invidious", self)
         youtube_btn.setStatusTip("Youtube sans tracking et pubs/poppups ^^! (ecouter de la music en background dispo pour les appareils mobiles aussi !!))")
-        p_btn.triggered.connect(lambda: self.conn(""))
-        tb2.addAction(p_btn)
+        youtube_btn.triggered.connect(lambda: self.conn("https://invidio.us/"))
+        tb2.addAction(youtube_btn)
         
         p_btn = QAction(QIcon("pin.jpg"), "Pinterest", self)
         p_btn.setStatusTip("Aller sur Pinterest")
