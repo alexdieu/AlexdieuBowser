@@ -75,7 +75,12 @@ class MainWindow(QMainWindow):
         stack_btn.setStatusTip("Aller sur Stack Overflow(forum de devellopement)")
         stack_btn.triggered.connect(lambda: self.conn("https://stackoverflow.com"))
         tb2.addAction(stack_btn)
-
+        
+        youtube_btn = Qaction(QIcon("youtube"), "Invidious", self)
+        youtube_btn.setStatusTip("Youtube sans tracking et pubs/poppups ^^! (ecouter de la music en background dispo pour les appareils mobiles aussi !!))")
+        p_btn.triggered.connect(lambda: self.conn(""))
+        tb2.addAction(p_btn)
+        
         p_btn = QAction(QIcon("pin.jpg"), "Pinterest", self)
         p_btn.setStatusTip("Aller sur Pinterest")
         p_btn.triggered.connect(lambda: self.conn("https://www.pinterest.fr/"))
